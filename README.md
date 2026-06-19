@@ -186,16 +186,24 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 ### Langkah Instalasi
 
 ```bash
-# 1. Clone atau download repositori ini ke folder lokal
-git clone https://github.com/your-username/spotify-mod-chrome-plugin.git
+# 1. Clone repositori atau download ZIP
+git clone https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension.git
 
-# 2. Buka chrome://extensions di browser Chrome
+#    Atau download langsung: https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension/archive/refs/heads/master.zip
+
+# 2. Ekstrak ZIP (jika download ZIP), lalu buka chrome://extensions
 # 3. Aktifkan "Developer mode" (pojok kanan atas)
-# 4. Klik "Load unpacked" → pilih folder repositori ini
+# 4. Klik "Load unpacked" → pilih folder yang sudah di-ekstrak
 # 5. Buka open.spotify.com — lihat FAB hijau di pojok kanan bawah
 # 6. (Opsional) Buat shortcut aplikasi:
 #    Chrome ⋮ → More Tools → Create Shortcut → centang "Open as window"
 ```
+
+### Video Tutorial
+
+[![Tutorial Install Unpacked Extension](https://img.shields.io/badge/Watch%20Tutorial%20(YouTube)-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/9wZt3M6chOI)
+
+Klik badge di atas untuk panduan visual cara load unpacked extension di Chrome.
 
 ### Catatan Penting
 
