@@ -186,10 +186,8 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 ### Langkah Instalasi
 
 ```bash
-# 1. Clone repositori atau download ZIP
+# 1. Clone repositori atau [download ZIP](https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension/archive/refs/heads/master.zip)
 git clone https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension.git
-
-#    Atau download langsung: https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension/archive/refs/heads/master.zip
 
 # 2. Ekstrak ZIP (jika download ZIP), lalu buka chrome://extensions
 # 3. Aktifkan "Developer mode" (pojok kanan atas)
