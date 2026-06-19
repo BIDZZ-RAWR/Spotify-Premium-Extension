@@ -185,17 +185,19 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 
 ### Langkah Instalasi
 
-```bash
-# 1. Clone repositori atau [download ZIP](https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension/archive/refs/heads/master.zip)
-git clone https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension.git
+**Opsi 1 — Download ZIP:** [DOWNLOAD](https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension/archive/refs/heads/master.zip) lalu ekstrak ke folder lokal.
 
-# 2. Ekstrak ZIP (jika download ZIP), lalu buka chrome://extensions
-# 3. Aktifkan "Developer mode" (pojok kanan atas)
-# 4. Klik "Load unpacked" → pilih folder yang sudah di-ekstrak
-# 5. Buka open.spotify.com — lihat FAB hijau di pojok kanan bawah
-# 6. (Opsional) Buat shortcut aplikasi:
-#    Chrome ⋮ → More Tools → Create Shortcut → centang "Open as window"
+**Opsi 2 — Clone via git:**
+```bash
+git clone https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension.git
 ```
+
+Setelah itu:
+1. Buka `chrome://extensions` di browser Chrome
+2. Aktifkan **Developer mode** (pojok kanan atas)
+3. Klik **Load unpacked** → pilih folder ekstensi
+4. Buka `open.spotify.com` — lihat FAB hijau di pojok kanan bawah
+5. (Opsional) Chrome ⋮ → More Tools → Create Shortcut → centang **Open as window**
 
 ### Video Tutorial
 
