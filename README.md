@@ -185,7 +185,7 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 
 ### Langkah Instalasi
 
-**Opsi 1 — Download ZIP:** [DOWNLOAD](https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension/archive/refs/heads/master.zip) lalu ekstrak ke folder lokal.
+**Opsi 1 — Download ZIP:** [**DOWNLOAD**](https://github.com/BIDZZ-RAWR/Spotify-Premium-Extension/archive/refs/heads/master.zip) lalu ekstrak ke folder lokal.
 
 **Opsi 2 — Clone via git:**
 ```bash
