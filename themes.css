@@ -1,0 +1,210 @@
+/* ── Bidzz Themes ── */
+/* Each theme overrides Spotify Encore design tokens */
+
+/* ── Dark ── */
+.bidzz-theme-dark {
+  --background-base: #07070a;
+  --background-highlight: #0d0d14;
+  --background-press: #000000;
+  --background-elevated-base: #0f0f18;
+  --background-elevated-highlight: #14141e;
+  --background-elevated-press: #181824;
+  --background-tinted-base: rgba(255, 255, 255, 0.04);
+  --background-tinted-highlight: rgba(255, 255, 255, 0.08);
+  --background-tinted-press: rgba(255, 255, 255, 0.12);
+  --decorative-base: rgba(255, 255, 255, 0.12);
+  --decorative-subdued: rgba(255, 255, 255, 0.06);
+  --text-bright-accent: #1DB954;
+  --text-positive: #1DB954;
+  --essential-bright-accent: #1DB954;
+  --essential-positive: #1DB954;
+}
+
+.bidzz-theme-dark div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-dark aside[data-testid="now-playing-bar"],
+.bidzz-theme-dark div[class*="main-view-container"] {
+  background-color: #07070a !important;
+}
+
+/* ── Light ── */
+.bidzz-theme-light {
+  --background-base: #f5f0eb;
+  --background-highlight: #ede8e2;
+  --background-press: #e5e0d8;
+  --background-elevated-base: #ffffff;
+  --background-elevated-highlight: #faf5f0;
+  --background-elevated-press: #f0ebe4;
+  --background-tinted-base: rgba(0, 0, 0, 0.03);
+  --background-tinted-highlight: rgba(0, 0, 0, 0.06);
+  --background-tinted-press: rgba(0, 0, 0, 0.10);
+  --text-base: #1a1410;
+  --text-subdued: #6b6258;
+  --decorative-base: rgba(0, 0, 0, 0.10);
+  --decorative-subdued: rgba(0, 0, 0, 0.05);
+  --text-bright-accent: #1DB954;
+  --text-positive: #1DB954;
+  --essential-bright-accent: #1DB954;
+  --essential-positive: #1DB954;
+  --essential-base: #1a1410;
+  --essential-subdued: #6b6258;
+}
+
+.bidzz-theme-light div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-light aside[data-testid="now-playing-bar"],
+.bidzz-theme-light div[class*="main-view-container"] {
+  background-color: #f5f0eb !important;
+}
+
+/* ── Midnight ── */
+.bidzz-theme-midnight {
+  --background-base: #000814;
+  --background-highlight: #001233;
+  --background-press: #000000;
+  --background-elevated-base: #001845;
+  --background-elevated-highlight: #002855;
+  --background-elevated-press: #003566;
+  --background-tinted-base: rgba(58, 134, 255, 0.08);
+  --background-tinted-highlight: rgba(58, 134, 255, 0.14);
+  --background-tinted-press: rgba(58, 134, 255, 0.22);
+  --decorative-base: rgba(58, 134, 255, 0.20);
+  --decorative-subdued: rgba(58, 134, 255, 0.10);
+  --text-bright-accent: #3a86ff;
+  --text-positive: #3a86ff;
+  --essential-bright-accent: #3a86ff;
+  --essential-positive: #3a86ff;
+}
+
+.bidzz-theme-midnight div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-midnight aside[data-testid="now-playing-bar"],
+.bidzz-theme-midnight div[class*="main-view-container"] {
+  background-color: #000814 !important;
+}
+
+/* ── Coffee ── */
+.bidzz-theme-coffee {
+  --background-base: #1a1410;
+  --background-highlight: #2a2018;
+  --background-press: #0e0a08;
+  --background-elevated-base: #2a2018;
+  --background-elevated-highlight: #3a2c22;
+  --background-elevated-press: #1e1610;
+  --background-tinted-base: rgba(212, 163, 115, 0.08);
+  --background-tinted-highlight: rgba(212, 163, 115, 0.14);
+  --background-tinted-press: rgba(212, 163, 115, 0.22);
+  --decorative-base: rgba(212, 163, 115, 0.18);
+  --decorative-subdued: rgba(212, 163, 115, 0.08);
+  --text-bright-accent: #d4a373;
+  --text-positive: #d4a373;
+  --essential-bright-accent: #d4a373;
+  --essential-positive: #d4a373;
+}
+
+.bidzz-theme-coffee div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-coffee aside[data-testid="now-playing-bar"],
+.bidzz-theme-coffee div[class*="main-view-container"] {
+  background-color: #1a1410 !important;
+}
+
+/* ── Lavender ── */
+.bidzz-theme-lavender {
+  --background-base: #12101e;
+  --background-highlight: #1c1830;
+  --background-press: #0a0814;
+  --background-elevated-base: #1c1830;
+  --background-elevated-highlight: #262042;
+  --background-elevated-press: #16122a;
+  --background-tinted-base: rgba(167, 139, 250, 0.08);
+  --background-tinted-highlight: rgba(167, 139, 250, 0.14);
+  --background-tinted-press: rgba(167, 139, 250, 0.22);
+  --decorative-base: rgba(167, 139, 250, 0.18);
+  --decorative-subdued: rgba(167, 139, 250, 0.08);
+  --text-bright-accent: #a78bfa;
+  --text-positive: #a78bfa;
+  --essential-bright-accent: #a78bfa;
+  --essential-positive: #a78bfa;
+}
+
+.bidzz-theme-lavender div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-lavender aside[data-testid="now-playing-bar"],
+.bidzz-theme-lavender div[class*="main-view-container"] {
+  background-color: #12101e !important;
+}
+
+/* ── Synthwave ── */
+.bidzz-theme-synthwave {
+  --background-base: #0a0020;
+  --background-highlight: #150040;
+  --background-press: #050010;
+  --background-elevated-base: #150040;
+  --background-elevated-highlight: #200060;
+  --background-elevated-press: #100030;
+  --background-tinted-base: rgba(255, 0, 255, 0.10);
+  --background-tinted-highlight: rgba(0, 212, 255, 0.10);
+  --background-tinted-press: rgba(255, 0, 255, 0.18);
+  --decorative-base: linear-gradient(90deg, rgba(255, 0, 255, 0.30), rgba(0, 212, 255, 0.30));
+  --decorative-subdued: rgba(255, 0, 255, 0.12);
+  --text-bright-accent: #ff00ff;
+  --text-positive: #00d4ff;
+  --essential-bright-accent: #ff00ff;
+  --essential-positive: #00d4ff;
+}
+
+.bidzz-theme-synthwave div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-synthwave aside[data-testid="now-playing-bar"],
+.bidzz-theme-synthwave div[class*="main-view-container"] {
+  background-color: #0a0020 !important;
+}
+
+/* ── Feminine Light ── */
+.bidzz-theme-feminine-light {
+  --background-base: #ffdae8;
+  --background-highlight: #fad8e6;
+  --background-press: #f5c8d8;
+  --background-elevated-base: #ffe6f0;
+  --background-elevated-highlight: #ffdae8;
+  --background-elevated-press: #fad8e6;
+  --background-tinted-base: rgba(255, 27, 113, 0.06);
+  --background-tinted-highlight: rgba(255, 27, 113, 0.12);
+  --background-tinted-press: rgba(255, 27, 113, 0.18);
+  --text-base: #2c1820;
+  --text-subdued: #7a5870;
+  --decorative-base: rgba(255, 27, 113, 0.18);
+  --decorative-subdued: rgba(255, 27, 113, 0.08);
+  --text-bright-accent: #ff1b71;
+  --text-positive: #ff1b71;
+  --essential-bright-accent: #ff1b71;
+  --essential-positive: #ff1b71;
+  --essential-base: #2c1820;
+  --essential-subdued: #7a5870;
+}
+
+.bidzz-theme-feminine-light div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-feminine-light aside[data-testid="now-playing-bar"],
+.bidzz-theme-feminine-light div[class*="main-view-container"] {
+  background-color: #ffdae8 !important;
+}
+
+/* ── Feminine Dark ── */
+.bidzz-theme-feminine-dark {
+  --background-base: #1e121e;
+  --background-highlight: #2e1a28;
+  --background-press: #140c14;
+  --background-elevated-base: #2e1a28;
+  --background-elevated-highlight: #3e2232;
+  --background-elevated-press: #221422;
+  --background-tinted-base: rgba(244, 143, 177, 0.10);
+  --background-tinted-highlight: rgba(244, 143, 177, 0.18);
+  --background-tinted-press: rgba(244, 143, 177, 0.26);
+  --decorative-base: rgba(244, 143, 177, 0.20);
+  --decorative-subdued: rgba(244, 143, 177, 0.10);
+  --text-bright-accent: #bc0047;
+  --text-positive: #bc0047;
+  --essential-bright-accent: #bc0047;
+  --essential-positive: #bc0047;
+}
+
+.bidzz-theme-feminine-dark div[id="Desktop_LeftSidebar_Id"],
+.bidzz-theme-feminine-dark aside[data-testid="now-playing-bar"],
+.bidzz-theme-feminine-dark div[class*="main-view-container"] {
+  background-color: #1e121e !important;
+}

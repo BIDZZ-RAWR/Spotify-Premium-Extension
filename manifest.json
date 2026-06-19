@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Bidzz Extension",
+  "version": "1.0",
+  "description": "Bidzz Extension - Spotify Mod",
+  "icons": {
+    "128": "img/icon.png"
+  },
+  "permissions": [
+    "storage",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://open.spotify.com/*",
+    "*://*.audio-ak-spotify-com.akamaized.net/*",
+    "*://*.googlesyndication.com/*",
+    "*://*.audio-akp-quic-spotify-com.akamaized.net/*",
+    "*://gae-spclient.spotify.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://open.spotify.com/*"],
+      "css": ["style.css"],
+      "js": ["js/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["themes.css", "js/volume-boost.js"],
+      "matches": ["https://open.spotify.com/*"]
+    }
+  ],
+  "action": {
+    "default_icon": "img/icon.png",
+    "default_title": "Bidzz Extension",
+    "default_popup": "popup/popup.html"
+  }
+}

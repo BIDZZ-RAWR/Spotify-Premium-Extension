@@ -1,0 +1,574 @@
+/* ── Block upgrade button ── */
+button[title="Upgrade to Premium"], div[data-testid="test-ref-div"] {
+    display: none !important;
+}
+
+/* ── Welcome Modal ── */
+#bidzz-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+#bidzz-overlay.bidzz-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#bidzz-modal {
+  background: #1e1e2a;
+  border-radius: 20px;
+  padding: 0;
+  max-width: 400px;
+  width: 90%;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  transform: scale(0.92) translateY(12px);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+  opacity: 0;
+}
+#bidzz-modal.bidzz-visible {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+#bidzz-modal-content {
+  padding: 40px 36px 32px;
+  text-align: center;
+}
+
+#bidzz-modal-icon {
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: bidzz-bounce-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+@keyframes bidzz-bounce-in {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#bidzz-modal-title {
+  margin: 0 0 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0ece4;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+#bidzz-modal-desc {
+  margin: 0 0 28px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(240, 236, 228, 0.6);
+}
+
+#bidzz-modal-btn {
+  display: inline-block;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 40px;
+  background: #1DB954;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 14px rgba(29, 185, 84, 0.3);
+}
+#bidzz-modal-btn:hover {
+  transform: scale(1.04);
+  background: #20cc5e;
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.45);
+}
+#bidzz-modal-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── Floating Action Button ── */
+#bidzz-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483640;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #1DB954;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(29, 185, 84, 0.4);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+  animation: bidzz-fab-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+#bidzz-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(29, 185, 84, 0.55);
+}
+#bidzz-fab:active {
+  transform: scale(0.95);
+}
+#bidzz-fab.bidzz-active {
+  transform: scale(0.9);
+  box-shadow: 0 2px 10px rgba(29, 185, 84, 0.3);
+}
+
+@keyframes bidzz-fab-in {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ── Panel ── */
+#bidzz-panel {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  z-index: 2147483641;
+  width: 300px;
+  background: #14141e;
+  border-radius: 16px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #f0ece4;
+  transform-origin: bottom right;
+  transform: scale(0.85) translateY(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+#bidzz-panel.bidzz-open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#bidzz-panel::-webkit-scrollbar {
+  width: 4px;
+}
+#bidzz-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+#bidzz-panel::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+.bidzz-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px 0;
+}
+.bidzz-panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.bidzz-panel-close {
+  background: none;
+  border: none;
+  color: rgba(240, 236, 228, 0.4);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.bidzz-panel-close:hover {
+  color: #f0ece4;
+  background: rgba(255,255,255,0.06);
+}
+
+.bidzz-panel-body {
+  padding: 14px 18px 18px;
+}
+
+/* Stats row */
+.bidzz-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.bidzz-stat {
+  flex: 1;
+  background: #1c1c2a;
+  border-radius: 10px;
+  padding: 10px 6px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.bidzz-stat-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  color: #f0ece4;
+}
+.bidzz-stat-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(240, 236, 228, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Section divider */
+.bidzz-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 8px;
+}
+.bidzz-section::before,
+.bidzz-section::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+}
+.bidzz-section span {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(240, 236, 228, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Control group */
+.bidzz-group {
+  margin-bottom: 10px;
+}
+.bidzz-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.bidzz-value {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1DB954;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Volume slider */
+.bidzz-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.1);
+  outline: none;
+  cursor: pointer;
+}
+.bidzz-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1DB954;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(29,185,84,0.3);
+  transition: transform 0.15s;
+}
+.bidzz-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.bidzz-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 4px;
+}
+
+.bidzz-ticks {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 1px 0;
+  font-size: 9px;
+  color: rgba(240,236,228,0.4);
+}
+
+/* Timer */
+.bidzz-timer-row {
+  display: flex;
+  gap: 6px;
+}
+.bidzz-timer-btn {
+  flex: 1;
+  padding: 7px 0;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  background: #1c1c2a;
+  color: #f0ece4;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  font-family: inherit;
+}
+.bidzz-timer-btn:hover {
+  background: rgba(29,185,84,0.15);
+  border-color: #1DB954;
+}
+.bidzz-timer-btn:active {
+  transform: scale(0.96);
+}
+.bidzz-timer-btn.active {
+  background: rgba(29,185,84,0.15);
+  border-color: #1DB954;
+  color: #1DB954;
+}
+.bidzz-timer-btn.bidzz-danger {
+  flex: 0 0 36px;
+  padding: 7px 0;
+  font-size: 13px;
+  color: rgba(240,236,228,0.4);
+}
+.bidzz-timer-btn.bidzz-danger:hover {
+  background: rgba(237,44,63,0.15);
+  border-color: #ed2c3f;
+  color: #ed2c3f;
+}
+
+.bidzz-countdown {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-top: 5px;
+  color: rgba(240,236,228,0.4);
+  min-height: 16px;
+}
+.bidzz-countdown.active {
+  color: #1DB954;
+}
+
+/* Toggle */
+.bidzz-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+}
+.bidzz-toggle-track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  margin-left: auto;
+}
+.bidzz-toggle-track input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.bidzz-toggle-knob {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  transition: background 0.25s ease;
+  cursor: pointer;
+}
+.bidzz-toggle-knob::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.bidzz-toggle-track input:checked + .bidzz-toggle-knob {
+  background: #1DB954;
+  box-shadow: 0 0 10px rgba(29,185,84,0.25);
+}
+.bidzz-toggle-track input:checked + .bidzz-toggle-knob::after {
+  transform: translateX(16px);
+}
+
+/* ── Theme Grid ── */
+.bidzz-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.bidzz-theme-card {
+  background: #1c1c2a;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 8px 6px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  position: relative;
+}
+.bidzz-theme-card:hover {
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+}
+.bidzz-theme-card:active {
+  transform: scale(0.96);
+}
+.bidzz-theme-card.active {
+  border-color: #1DB954;
+  box-shadow: 0 0 12px rgba(29,185,84,0.2);
+}
+.bidzz-theme-card.wide {
+  grid-column: span 2;
+}
+.bidzz-theme-preview {
+  width: 100%;
+  height: 24px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.bidzz-theme-name {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(240,236,228,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+.bidzz-theme-dot {
+  display: none;
+}
+
+/* Feminine sub-toggle */
+.bidzz-fem-row {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-top: 2px;
+}
+.bidzz-fem-btn {
+  width: 20px;
+  height: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  background: transparent;
+  color: rgba(240,236,228,0.4);
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+}
+.bidzz-fem-btn:hover {
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(240,236,228,0.8);
+}
+.bidzz-fem-btn.active {
+  background: #f472b6;
+  border-color: #f472b6;
+  color: #fff;
+}
+
+/* ── Theme Collapse ── */
+.bidzz-theme-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  margin: 12px 0 8px;
+  transition: opacity 0.2s;
+}
+.bidzz-theme-header:hover {
+  opacity: 0.8;
+}
+.bidzz-theme-header > span:first-child {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(240, 236, 228, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.bidzz-theme-active {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--accent, #1DB954);
+  margin-left: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.bidzz-chevron {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  color: rgba(240, 236, 228, 0.4);
+  flex-shrink: 0;
+}
+.bidzz-theme-header:not(.collapsed) .bidzz-chevron {
+  transform: rotate(180deg);
+}
+.bidzz-theme-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.bidzz-theme-collapse.open {
+  max-height: 400px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  #bidzz-modal-content {
+    padding: 32px 24px 28px;
+  }
+  #bidzz-modal-title {
+    font-size: 20px;
+  }
+  #bidzz-modal-desc {
+    font-size: 14px;
+  }
+  #bidzz-panel {
+    right: 12px;
+    width: calc(100vw - 24px);
+    bottom: 76px;
+  }
+  #bidzz-fab {
+    right: 12px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}

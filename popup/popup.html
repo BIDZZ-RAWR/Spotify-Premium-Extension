@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+          <rect width="48" height="48" rx="12" fill="#1DB954"/>
+          <path d="M24 12C17.373 12 12 17.373 12 24s5.373 12 12 12 12-5.373 12-12S30.627 12 24 12zm5.52 17.892a.748.748 0 01-1.032.252c-2.832-1.728-6.396-2.124-10.596-1.164a.75.75 0 01-.336-1.464c4.536-1.056 8.424-.588 11.568 1.344.36.216.468.672.252 1.032zm1.476-3.384a.936.936 0 01-1.284.312c-3.24-1.992-8.184-2.568-12.024-1.404a.936.936 0 01-1.152-.648.936.936 0 01.648-1.152c4.344-1.32 9.768-.672 13.5 1.608.456.264.576.828.312 1.284zm.132-3.516c-3.888-2.304-10.296-2.52-14.004-1.392a1.124 1.124 0 01-1.404-.72 1.124 1.124 0 01.72-1.404c4.248-1.296 11.292-1.044 15.708 1.572.504.3.672.948.372 1.452a1.05 1.05 0 01-1.392.492z" fill="#fff"/>
+        </svg>
+        <h1>Bidzz</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-value sm" id="total-blocked">0</span>
+          <span class="stat-label sm">Blocked</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value sm" id="today-blocked">0</span>
+          <span class="stat-label sm">Today</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value sm" id="time-saved">0m</span>
+          <span class="stat-label sm">Saved</span>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>Audio</span></div>
+
+      <div class="control-group">
+        <div class="control-label">
+          <span class="control-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </span>
+          <span>Volume Boost</span>
+          <span class="control-value" id="volume-label">100%</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" id="volume-slider" min="100" max="200" value="100" />
+          <div class="slider-ticks">
+            <span>1×</span>
+            <span>1.5×</span>
+            <span>2×</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label">
+          <span class="control-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span>Sleep Timer</span>
+          <span class="control-value" id="timer-label">Off</span>
+        </div>
+        <div class="timer-buttons" id="timer-buttons">
+          <button class="timer-btn" data-minutes="15">15m</button>
+          <button class="timer-btn" data-minutes="30">30m</button>
+          <button class="timer-btn" data-minutes="60">60m</button>
+          <button class="timer-btn danger" id="timer-cancel">✕</button>
+        </div>
+        <div class="timer-countdown" id="timer-countdown">—</div>
+      </div>
+
+      <div class="section-divider"><span>Settings</span></div>
+
+      <div class="control-group">
+        <label class="toggle-row">
+          <span class="control-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+          <span>Darker Theme</span>
+          <div class="toggle-track">
+            <input type="checkbox" id="toggle-dark" />
+            <span class="toggle-knob"></span>
+          </div>
+        </label>
+      </div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
