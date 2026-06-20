@@ -15,6 +15,7 @@
 [![Version](https://img.shields.io/badge/Version-1.0-1DB954?style=flat-square)](.)
 [![License](https://img.shields.io/badge/License-MIT-191414?style=flat-square)](.)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-1aa34a?style=flat-square)](.)
+[![Video Review](https://img.shields.io/badge/Video%20Review-1DB954?style=flat-square&logo=github)](Videoreview.mp4)
 
 </div>
 
@@ -204,10 +205,6 @@ Setelah itu:
 [![Tutorial Install Unpacked Extension](https://img.shields.io/badge/Watch%20Tutorial%20(YouTube)-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/9wZt3M6chOI)
 
 Klik badge di atas untuk panduan visual cara load unpacked extension di Chrome.
-
-### Video Review
-
-<video src="Videoreview.mp4" controls width="100%"></video>
 
 ### Catatan Penting
 
