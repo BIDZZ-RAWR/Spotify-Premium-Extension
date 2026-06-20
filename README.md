@@ -49,7 +49,7 @@
 
 ---
 
-## `01` — Tentang Project
+## Tentang Project
 
 **Bidzz Extension** adalah ekstensi Chrome (Manifest V3) yang meningkatkan pengalaman Spotify Web Player (`open.spotify.com`) — memblokir iklan, menghadirkan 8 tema visual, volume booster hingga 200%, sleep timer, dan panel kontrol langsung di halaman Spotify.
 
@@ -63,27 +63,27 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 
 ---
 
-## `02` — Fitur Utama
+## Fitur Utama
 
 <table>
 <tr>
 <td width="50%">
 
-**🔇 Ad Blocker**
+**Ad Blocker**
 - 3 declarativeNetRequest rules — blokir audio ads, Google ads, QUIC ads
 - Request audio iklan Spotify (`audio-ak-spotify-com.akamaized.net`)
 - Google syndication ads (`googlesyndication.com`)
 - QUIC-based audio ads (`audio-akp-quic-spotify-com`)
 - Stats real-time: total blocked, hari ini, waktu dihemat
 
-**🎨 8 Visual Themes**
+**8 Visual Themes**
 - Dark (default hijau Spotify)
 - Light, Midnight, Coffee, Lavender
 - Synthwave, Feminine Light, Feminine Dark
 - CSS custom properties — override penuh token Encore Spotify
 - Collapsible theme panel — state persist di storage
 
-**🔊 Volume Booster**
+**Volume Booster**
 - Web Audio API — `AudioContext` + `GainNode`
 - Gain 1.0× hingga 2.0× (100%–200%)
 - Inject ke page main world — akses penuh ke `<audio>` element
@@ -92,27 +92,27 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 </td>
 <td width="50%">
 
-**⏱️ Sleep Timer**
+**Sleep Timer**
 - Preset: 15 / 30 / 60 menit
 - Timer via absolute `endTime` timestamp — tahan reload
 - Countdown live di panel dan popup (MM:SS)
 - Auto-pause playback via klik tombol Spotify play/pause
 - Toast notification saat timer habis — dismiss 4 detik
 
-**🖱️ FAB Control Panel**
+**FAB Control Panel**
 - Floating action button 48×48px — pojok kanan bawah
 - Panel 300px — slide up, dark theme, Spotify-styled
 - Stats row: blocked count, hari ini, waktu dihemat
 - Volume slider, sleep timer, theme grid
 - Responsive: breakpoint `max-width: 480px`
 
-**👋 Welcome Modal**
+**Welcome Modal**
 - Full-screen overlay + backdrop blur
 - Animasi scale + opacity (cubic-bezier)
 - Tampil sekali — state `bidzz_welcomeShown` di storage
 - Reset otomatis saat ekstensi di-install ulang
 
-**📊 Stats Tracker**
+**Stats Tracker**
 - Service worker polling DNR every 30 detik
 - `totalBlocked`, `todayBlocked`, `dailyLog`
 - Waktu dihemat: `totalBlocked × 30 detik`
@@ -126,7 +126,7 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 
 ---
 
-## `03` — Tech Stack
+## Tech Stack
 
 <div align="center">
 
@@ -149,7 +149,7 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 
 ---
 
-## `04` — Arsitektur
+## Arsitektur
 
 <div align="center">
   <img src="arsitektur.png" alt="Bidzz Extension Architecture" width="100%" style="border-radius: 12px;" />
@@ -159,7 +159,7 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 
 ---
 
-## `05` — Instalasi
+## Instalasi
 
 ### Prasyarat
 
@@ -198,7 +198,7 @@ Klik badge di atas untuk panduan visual cara load unpacked extension di Chrome.
 
 ---
 
-## `06` — Struktur Project
+## Struktur Project
 
 ```
 spotify-mod-chrome-plugin/
@@ -227,7 +227,7 @@ spotify-mod-chrome-plugin/
 
 ---
 
-## `07` — Visual Themes
+## Visual Themes
 
 Ekstensi membawa **8 tema visual** yang meng-override sistem desain Spotify (Encore tokens) via CSS custom properties. Tema diterapkan dengan menambahkan class `bidzz-theme-{id}` ke elemen `<html>`.
 
@@ -250,7 +250,7 @@ Untuk tema terang (light, feminine-light), juga meng-override `--text-base`, `--
 
 ---
 
-## `08` — Volume Booster
+## Volume Booster
 
 Volume booster bekerja melalui **Web Audio API** dengan arsitektur dua-lapis:
 
@@ -287,13 +287,13 @@ volume-boost.js (main world)
 | **Komunikasi** | `window.postMessage` + `message` event listener |
 | **Fallback** | `HTMLMediaElement.volume` property |
 
-> ⚠️ Peringatan satu kali (dismissible) akan tampil saat volume booster diaktifkan — menjelaskan bahwa fitur ini menggunakan Web Audio API dan mungkin tidak kompatibel dengan semua perangkat.
+> Peringatan satu kali (dismissible) akan tampil saat volume booster diaktifkan — menjelaskan bahwa fitur ini menggunakan Web Audio API dan mungkin tidak kompatibel dengan semua perangkat.
 
 <br/>
 
 ---
 
-## `09` — Sleep Timer
+## Sleep Timer
 
 Timer tidur otomatis menjeda playback Spotify setelah durasi yang ditentukan.
 
@@ -326,7 +326,7 @@ Timer state menggunakan absolute `endTime` — tetap akurat meskipun ada reload 
 
 ---
 
-## `10` — Stats & Background Service Worker
+## Stats & Background Service Worker
 
 Service worker (`js/background.js`) bertanggung jawab melacak statistik pemblokiran iklan.
 
@@ -362,7 +362,7 @@ Update chrome.storage.local:
 
 ---
 
-## `11` — Declarative Net Request Rules
+## Declarative Net Request Rules
 
 Tiga aturan blokir di `rules.json` menggunakan `declarativeNetRequest` API — tanpa perlu memori untuk service worker, semua blocking ditangani langsung oleh Chrome:
 
@@ -378,24 +378,24 @@ Semua aturan priority `1`, action `block` — tidak ada allow/redirect rules.
 
 ---
 
-## `12` — Popup Extension
+## Popup Extension
 
 Popup (`popup/popup.html`) adalah antarmuka cepat untuk mengontrol ekstensi tanpa perlu membuka Spotify:
 
 ```
 ┌─────────────────────────────────────┐
-│  🎵 Bidzz                          │
+│  Bidzz                          │
 │                                     │
 │  Blocked     Today       Saved      │
 │  1,234       56          10m 17s    │
 │                                     │
-│  🔊 Volume Boost ────●──────── 150% │
+│  Volume Boost ────●──────── 150% │
 │    1×           1.5×          2×    │
 │                                     │
-│  ⏱️ Sleep Timer                     │
-│  [15m] [30m] [60m]  [✕]            │
+│  Sleep Timer                     │
+│  [15m] [30m] [60m]  [x]            │
 │                                     │
-│  🌙 Darker Theme  [════════○]      │
+│  Darker Theme  [════════○]      │
 └─────────────────────────────────────┘
 ```
 
@@ -410,7 +410,7 @@ Popup (`popup/popup.html`) adalah antarmuka cepat untuk mengontrol ekstensi tanp
 
 ---
 
-## `13` — Deploy & Packaging
+## Deploy & Packaging
 
 ### Sebagai Unpacked Extension (Development)
 
@@ -445,7 +445,7 @@ chrome://extensions → Developer mode → Load unpacked
 
 ---
 
-## `14` — Keamanan & Best Practices
+## Keamanan & Best Practices
 
 - **Zero external dependencies** — tidak ada risiko supply chain attack
 - **Isolated World** — content script tidak bisa diakses oleh page script Spotify
