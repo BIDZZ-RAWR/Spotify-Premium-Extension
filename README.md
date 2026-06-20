@@ -151,39 +151,9 @@ Tidak ada dependensi eksternal, tidak perlu build step — cukup load folder seb
 
 ## `04` — Arsitektur
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                         BIDZZ EXTENSION ARCHITECTURE                     │
-└─────────────────────────────────────────────────────────────────────────┘
-
-  User Action (popup / FAB Panel)
-          │
-          ▼
-  ┌──────────────────┐     chrome.storage.local     ┌──────────────────┐
-  │   popup.js       │◄═══════════════════════════►│   content.js      │
-  │   popup.html     │   set() / get() / onChanged  │   style.css       │
-  └──────────────────┘                              └────────┬─────────┘
-          │                                                  │
-          ▼                                                  ▼
-  ┌──────────────────┐                              ┌──────────────────┐
-  │  background.js   │                              │  window.postMsg  │
-  │  (service worker)│                              │  BIDZZ_VOLUME    │
-  │  polling 30s DNR │                              └────────┬─────────┘
-  └──────────────────┘                                       │
-          │                                                  ▼
-          ▼                                         ┌──────────────────┐
-  ┌──────────────────┐                              │  volume-boost.js │
-  │  declarativeNet  │                              │  (page main world)│
-  │  Request (DNR)   │                              │  AudioContext     │
-  │  3 block rules   │                              │  GainNode 1.0-2.0│
-  └──────────────────┘                              └──────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────┐
-│  Firefox: audio-ak-spotify-com  →  BLOCK (media)                        │
-│  Google: googlesyndication.com  →  BLOCK (script/img/xhr)               │
-│  QUIC: audio-akp-quic-spotify   →  BLOCK (media)                        │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+<div align="center">
+  <img src="arsitektur.png" alt="Bidzz Extension Architecture" width="100%" style="border-radius: 12px;" />
+</div>
 
 <br/>
 
