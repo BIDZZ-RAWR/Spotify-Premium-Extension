@@ -15,7 +15,10 @@
 [![Version](https://img.shields.io/badge/Version-1.0-1DB954?style=flat-square)](.)
 [![License](https://img.shields.io/badge/License-MIT-191414?style=flat-square)](.)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-1aa34a?style=flat-square)](.)
-[![Video Review](https://img.shields.io/badge/Video%20Review-1DB954?style=flat-square&logo=github)](Videoreview.mp4)
+
+<br/>
+
+<video src="https://drive.google.com/uc?export=download&id=1h6t613pfKW5K7xaxpw5vN5TteD_v7O_b" controls width="100%" style="border-radius: 12px;"></video>
 
 </div>
 
