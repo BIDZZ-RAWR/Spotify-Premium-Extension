@@ -18,7 +18,12 @@
 
 <br/>
 
-<video src="https://drive.google.com/uc?export=download&id=1h6t613pfKW5K7xaxpw5vN5TteD_v7O_b" controls width="100%" style="border-radius: 12px;"></video>
+<a href="https://www.youtube.com/watch?v=qs4aLWOLQ1Y" target="_blank">
+  <img src="https://img.youtube.com/vi/qs4aLWOLQ1Y/maxresdefault.jpg"
+       alt="Watch Video Review"
+       width="100%"
+       style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
+</a>
 
 </div>
 
