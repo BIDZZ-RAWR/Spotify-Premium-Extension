@@ -205,6 +205,10 @@ Setelah itu:
 
 Klik badge di atas untuk panduan visual cara load unpacked extension di Chrome.
 
+### Video Review
+
+<video src="Videoreview.mp4" controls width="100%"></video>
+
 ### Catatan Penting
 
 - Ekstensi hanya aktif di `open.spotify.com` — tidak memengaruhi situs lain
